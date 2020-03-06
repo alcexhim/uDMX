@@ -5,7 +5,7 @@ using System.Text;
 
 namespace uDMX
 {
-	public enum CommandType
+	public enum CommandType : byte
 	{
 		SetSingleChannel = 1,
 		SetChannelRange = 2,

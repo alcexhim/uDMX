@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6A53417-7219-442D-95EA-2264585C6954}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>uDMXTest</RootNamespace>
+    <AssemblyName>uDMXTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fixture.cs" />
+    <Compile Include="SlimPAR56Fixture.cs" />
+    <Compile Include="Manufacturer.cs" />
+    <Compile Include="Manufacturers.cs" />
+    <Compile Include="FixtureInstance.cs" />
+    <Compile Include="Fixtures.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="Channel.cs" />
+    <Compile Include="KnownChannel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\uDMX.csproj">
+      <Project>{AC9E14D6-7EF0-4B5F-9645-B033D63DE3F2}</Project>
+      <Name>uDMX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LibUSB\LibUSB.csproj">
+      <Project>{00DCDC16-6AC5-4F1A-9485-D60893719080}</Project>
+      <Name>LibUSB</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
