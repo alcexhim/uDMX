@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uDMX", "uDMX.csproj", "{AC9E14D6-7EF0-4B5F-9645-B033D63DE3F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibUSB", "..\LibUSB\LibUSB.csproj", "{00DCDC16-6AC5-4F1A-9485-D60893719080}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uDMXTest", "uDMXTest\uDMXTest.csproj", "{A6A53417-7219-442D-95EA-2264585C6954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +17,13 @@ Global
 		{AC9E14D6-7EF0-4B5F-9645-B033D63DE3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC9E14D6-7EF0-4B5F-9645-B033D63DE3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC9E14D6-7EF0-4B5F-9645-B033D63DE3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00DCDC16-6AC5-4F1A-9485-D60893719080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DCDC16-6AC5-4F1A-9485-D60893719080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DCDC16-6AC5-4F1A-9485-D60893719080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DCDC16-6AC5-4F1A-9485-D60893719080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A53417-7219-442D-95EA-2264585C6954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A53417-7219-442D-95EA-2264585C6954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A53417-7219-442D-95EA-2264585C6954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A53417-7219-442D-95EA-2264585C6954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

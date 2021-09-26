@@ -9,7 +9,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>uDMX</RootNamespace>
     <AssemblyName>uDMX</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <ProductVersion>8.0.30703</ProductVersion>
@@ -42,6 +41,12 @@
     <Compile Include="Interface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MBS.Framework.USB\Libraries\MBS.Framework.USB\MBS.Framework.USB.csproj">
+      <Project>{00DCDC16-6AC5-4F1A-9485-D60893719080}</Project>
+      <Name>MBS.Framework.USB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -50,10 +55,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <ProjectReference Include="..\LibUSB\LibUSB.csproj">
-      <Project>{00DCDC16-6AC5-4F1A-9485-D60893719080}</Project>
-      <Name>LibUSB</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>

@@ -49,22 +49,24 @@ namespace uDMXTest
 					FixtureInstance inst = new FixtureInstance (Fixtures.SlimPAR56);
 					inst.Address = 1;
 
-					// 3-ch
-					inst.SetChannelValue(KnownChannel.Red, 0);
-					inst.SetChannelValue(KnownChannel.Green, 255);
-					inst.SetChannelValue(KnownChannel.Blue, 128);
+                    // 3-ch
+                    inst.SetChannelValue(new Channel(1, null), 255);
+                    inst.SetChannelValue(new Channel(2, null), 0);
+                    inst.SetChannelValue(new Channel(3, null), 0);
+                    inst.SetChannelValue(new Channel(4, null), 255);
+                    inst.SetChannelValue(new Channel(5, null), 0);
+                    inst.SetChannelValue(new Channel(6, null), 255);
+                    inst.SetChannelValue(new Channel(7, null), 255);
+                    inst.SetChannelValue(new Channel(8, null), 255);
+                    inst.SetChannelValue(new Channel(21, null), 255);
+                    inst.SetChannelValue(new Channel(22, null), 255);
+                    inst.SetChannelValue(new Channel(23, null), 255);
 
-					// additional for 7-ch
-					inst.SetChannelValue(KnownChannel.Color, 0);
-					inst.SetChannelValue(KnownChannel.Shutter, 0);
-					inst.SetChannelValue(KnownChannel.Mode, 0);
-					inst.SetChannelValue(KnownChannel.Brightness, 0);
+                    // for the megastrobe, in 8-ch mode
+                    // ch 0-5 are dimmers for the six rows of two LEDs each
+                    // ch 6 and 7 are shutter effects && shutter effects speed
 
-					// for the megastrobe, in 8-ch mode
-					// ch 0-5 are dimmers for the six rows of two LEDs each
-					// ch 6 and 7 are shutter effects && shutter effects speed
-
-					env.Fixtures.Add(inst);
+                    env.Fixtures.Add(inst);
 
 					env.Send ();
 

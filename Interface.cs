@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using LibUSB;
+using MBS.Framework.USB;
 
 namespace uDMX
 {
 	public class Interface
 	{
-		static Context ctx = null;
+		static UsbContext ctx = null;
 		public static Interface[] GetInterfaces()
 		{
 			if (ctx == null) {
-				ctx = new Context ();
+				ctx = new UsbContext();
 			}
 			List<Interface> list = new List<Interface>();
-			Device[] devices = ctx.GetDevices(0x16C0, 0x05DC);
+			UsbDevice[] devices = ctx.GetDevices(0x16C0, 0x05DC);
 			if (devices.Length > 0)
 			{
-				foreach (Device device in devices)
+				foreach (UsbDevice device in devices)
 				{
 					list.Add(new Interface(device));
 				}
@@ -27,8 +27,8 @@ namespace uDMX
 			return list.ToArray();
 		}
 
-		private Device mvarDevice = null;
-		private Interface(Device device)
+		private UsbDevice mvarDevice = null;
+		private Interface(UsbDevice device)
 		{
 			mvarDevice = device;
 		}
@@ -46,14 +46,14 @@ namespace uDMX
 		
 		private int SendCommand(CommandType type, int wValue, int wIndex, int wLength, byte[] data)
 		{
-			int r = mvarDevice.ControlTransfer((byte)((byte)LibUSB.EndpointDirection.Out | (byte)LibUSB.RequestType.Vendor | (byte)LibUSB.RequestRecipient.Device),
+			mvarDevice.ControlTransfer((byte)((byte)EndpointDirection.Out | (byte)RequestType.Vendor | (byte)RequestRecipient.Device),
 				(byte) type,
 				(ushort)wValue,
 				(ushort)wIndex,
 				data,
-				(ushort)wLength,
+				// (ushort)wLength,
 				2000);
-			return r;
+			return 0;
 		}
 		
 		public int SetSingleChannel(int channel, byte value)
